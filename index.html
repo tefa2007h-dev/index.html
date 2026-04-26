@@ -16,8 +16,14 @@
             background-size: 100% 100%, 25px 25px, 25px 25px;
             color: #fff; font-family: 'Cairo', sans-serif; margin: 0; padding: 10px; 
         }
-        .container { max-width: 600px; margin: auto; }
-        .cover-img { width: 100%; border-radius: 15px; margin-bottom: 20px; border: 3px solid var(--yas-red); }
+        .container { max-width: 600px; margin: auto; text-align: center; }
+        
+        /* اللوجو في النص */
+        .logo-container { margin: 20px 0; }
+        .logo-img { width: 120px; height: 120px; object-fit: contain; border-radius: 50%; border: 3px solid var(--yas-red); background: #000; padding: 5px; }
+        
+        .cover-img { width: 100%; border-radius: 15px; margin-bottom: 20px; border: 2px solid var(--yas-red); }
+        
         .section-title { 
             color: var(--yas-yellow); text-align: center; margin: 30px 0 15px; 
             font-size: 1.6rem; font-weight: 900; background: var(--yas-red); 
@@ -30,6 +36,7 @@
         .price-row { display: flex; justify-content: space-around; background: #222; padding: 6px 0; border-top: 1px solid var(--yas-red); }
         .price-tag { color: var(--yas-yellow); font-size: 1rem; font-weight: 900; }
         .price-tag span { display: block; font-size: 0.6rem; color: #aaa; }
+        
         .sauces-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; padding-bottom: 30px; }
         .sauce-item { text-align: center; background: rgba(30,30,30,0.8); padding: 10px; border-radius: 10px; border: 1px solid #444; }
         .sauce-item img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--yas-yellow); object-fit: cover; }
@@ -39,18 +46,20 @@
 <body>
 
 <div class="container">
-    <img src="cover.jpg" class="cover-img">
+    <div class="logo-container">
+        <img src="image_3b4619.png" class="logo-img">
+    </div>
 
     <h2 class="section-title">قائمة اللحوم (BEEF)</h2>
     <div class="menu-grid">
-        <div class="item-card"><img src="beef-classic.jpg"><h3>بيف كلاسيك</h3><div class="price-row"><div class="price-tag"><span>S</span>160</div><div class="price-tag"><span>D</span>200</div></div></div>
-        <div class="item-card"><img src="beef-mushroom.jpg"><h3>ياس بيف مشروم</h3><div class="price-row"><div class="price-tag"><span>S</span>180</div><div class="price-tag"><span>D</span>220</div></div></div>
-        <div class="item-card"><img src="jalapeno-burger.jpg"><h3>ياس سبايسي هالابينو</h3><div class="price-row"><div class="price-tag"><span>S</span>180</div><div class="price-tag"><span>D</span>220</div></div></div>
+        <div class="item-card"><img src="image_397c5c.jpg"><h3>بيف كلاسيك</h3><div class="price-row"><div class="price-tag"><span>S</span>160</div><div class="price-tag"><span>D</span>200</div></div></div>
+        <div class="item-card"><img src="image_3c1f77.jpg"><h3>ياس بيف مشروم</h3><div class="price-row"><div class="price-tag"><span>S</span>180</div><div class="price-tag"><span>D</span>220</div></div></div>
+        <div class="item-card"><img src="image_3a5ca1.jpg"><h3>ياس سبايسي هالابينو</h3><div class="price-row"><div class="price-tag"><span>S</span>180</div><div class="price-tag"><span>D</span>220</div></div></div>
     </div>
 
     <h2 class="section-title">قائمة الدجاج (CHICKEN)</h2>
     <div class="menu-grid">
-        <div class="item-card"><img src="chicken-classic.jpg"><h3>ياس كلاسيك تشيكن</h3><div class="price-row"><div class="price-tag"><span>S</span>150</div><div class="price-tag"><span>D</span>200</div></div></div>
+        <div class="item-card"><img src="image_3b3715.jpg"><h3>ياس كلاسيك تشيكن</h3><div class="price-row"><div class="price-tag"><span>S</span>150</div><div class="price-tag"><span>D</span>200</div></div></div>
         <div class="item-card"><img src="chicken-ranch.jpg"><h3>ياس تشيكن رانش</h3><div class="price-row"><div class="price-tag"><span>S</span>170</div><div class="price-tag"><span>D</span>220</div></div></div>
         <div class="item-card"><img src="chicken-mushroom.jpg"><h3>ياس كريمي مشروم</h3><div class="price-row"><div class="price-tag"><span>S</span>180</div><div class="price-tag"><span>D</span>230</div></div></div>
         <div class="item-card"><img src="homemade-chicken.jpg"><h3>هوم ميد بانية</h3><div class="price-row"><div class="price-tag"><span>S</span>160</div><div class="price-tag"><span>D</span>210</div></div></div>
@@ -58,9 +67,9 @@
 
     <h2 class="section-title">المقبلات (SIDES)</h2>
     <div class="menu-grid">
-        <div class="item-card"><img src="loaded-fries-strips.jpg"><h3>فرايز استريبس وجبنة</h3><div class="price-row"><div class="price-tag">90 LE</div></div></div>
-        <div class="item-card"><img src="classic-fries.jpg"><h3>باكت بطاطس كلاسيك</h3><div class="price-row"><div class="price-tag">40 LE</div></div></div>
-        <div class="item-card"><img src="chicken-strips.jpg"><h3>تشيكن استريبس</h3><div class="price-row"><div class="price-tag">120 LE</div></div></div>
+        <div class="item-card"><img src="image_397bfc.jpg"><h3>فرايز استريبس وجبنة</h3><div class="price-row"><div class="price-tag">90 LE</div></div></div>
+        <div class="item-card"><img src="image_397c1a.jpg"><h3>باكت بطاطس كلاسيك</h3><div class="price-row"><div class="price-tag">40 LE</div></div></div>
+        <div class="item-card"><img src="image_397c3d.jpg"><h3>تشيكن استريبس</h3><div class="price-row"><div class="price-tag">120 LE</div></div></div>
         <div class="item-card"><img src="Cheddar-Bites.jpg"><h3>شيدر بايتس</h3><div class="price-row"><div class="price-tag">70 LE</div></div></div>
     </div>
 
@@ -71,7 +80,7 @@
         <div class="sauce-item"><img src="texas-sauce.jpg"><p>تكساس</p></div>
         <div class="sauce-item"><img src="ranch-sauce.jpg"><p>رانش</p></div>
         <div class="sauce-item"><img src="cheese-sauce.jpg"><p>جبنة</p></div>
-        <div class="sauce-item"><img src="bbq-sauce.jpg"><p>باربيكيو</p></div>
+        <div class="sauce-item"><img src="image_39efa7.jpg"><p>باربيكيو</p></div>
     </div>
 </div>
 
