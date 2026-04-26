@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAS Burger Menu</title>
+    <title>YAS Burger - Premium Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --yas-red: #E31E24; --yas-yellow: #FFD200; }
+        :root { --yas-red: #E31E24; --yas-yellow: #FFD200; --dark-bg: #0b0b0b; }
         body { 
-            background: #000;
-            background-image: 
-                linear-gradient(to bottom, #000 45%, transparent 50%),
-                linear-gradient(rgba(227, 30, 36, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(227, 30, 36, 0.15) 1px, transparent 1px);
-            background-size: 100% 100%, 25px 25px, 25px 25px;
+            background: var(--dark-bg);
+            background-image: linear-gradient(to bottom, #000 40%, transparent 50%), 
+                              linear-gradient(rgba(227, 30, 36, 0.1) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(227, 30, 36, 0.1) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
             color: #fff; font-family: 'Cairo', sans-serif; margin: 0; padding: 10px; 
         }
         .container { max-width: 600px; margin: auto; }
-        .cover-img { width: 100%; border-radius: 15px; margin-bottom: 20px; border: 3px solid var(--yas-red); }
+        .cover-img { width: 100%; border-radius: 12px; margin-bottom: 15px; border: 2px solid var(--yas-red); }
         .section-title { 
-            color: var(--yas-yellow); text-align: center; margin: 30px 0 15px; 
-            font-size: 1.6rem; font-weight: 900; background: var(--yas-red); 
-            padding: 5px; border-radius: 8px;
+            color: var(--yas-yellow); text-align: center; margin: 25px 0 10px; 
+            font-size: 1.4rem; font-weight: 900; background: var(--yas-red); 
+            padding: 5px; border-radius: 8px; box-shadow: 0 3px #8b0000;
         }
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .item-card { background: rgba(20, 20, 20, 0.95); border-radius: 12px; overflow: hidden; text-align: center; border: 1px solid #444; }
-        .item-card img { width: 100%; height: 165px; object-fit: cover; }
-        .item-card h3 { font-size: 0.95rem; margin: 8px 0; height: 35px; display: flex; align-items: center; justify-content: center; }
-        .price-row { display: flex; justify-content: space-around; background: #222; padding: 6px 0; border-top: 1px solid var(--yas-red); }
-        .price-tag { color: var(--yas-yellow); font-size: 1rem; font-weight: 900; }
-        .price-tag span { display: block; font-size: 0.6rem; color: #aaa; }
-        .sauces-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 15px; padding-bottom: 30px; }
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .item-card { 
+            background: rgba(20, 20, 20, 0.9); border-radius: 10px; overflow: hidden; 
+            text-align: center; border: 1px solid #333; transition: 0.3s;
+        }
+        .item-card img { width: 100%; height: 120px; object-fit: cover; } /* صغرت الصور عشان تبان كلها */
+        .item-card h3 { font-size: 0.85rem; margin: 5px 0; height: 30px; display: flex; align-items: center; justify-content: center; padding: 0 5px; color: #fff; }
+        .price-row { display: flex; justify-content: space-around; background: #222; padding: 4px 0; border-top: 1px solid #444; }
+        .price-tag { color: var(--yas-yellow); font-size: 0.8rem; font-weight: 900; }
+        .price-tag span { display: block; font-size: 0.6rem; color: #aaa; font-weight: 400; }
+        .sauces-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; text-align: center; margin-top: 15px; padding-bottom: 30px; }
         .sauce-item { text-align: center; }
-        .sauce-item img { width: 65px; height: 65px; border-radius: 50%; border: 2px solid var(--yas-yellow); object-fit: cover; }
-        .sauce-item p { font-size: 0.75rem; margin-top: 5px; font-weight: bold; }
+        .sauce-item img { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--yas-yellow); object-fit: cover; }
+        .sauce-item p { font-size: 0.65rem; margin-top: 5px; font-weight: bold; color: #ccc; }
     </style>
 </head>
 <body>
@@ -43,24 +45,32 @@
 
     <h2 class="section-title">قائمة اللحوم (BEEF)</h2>
     <div class="menu-grid">
-        <div class="item-card"><img src="yas-classic-beef.jpg"><h3>ياس كلاسيك بيف</h3><div class="price-row"><div class="price-tag"><span>S</span>160</div><div class="price-tag"><span>D</span>200</div></div></div>
-        <div class="item-card"><img src="beef-mushroom.jpg"><h3>ياس بيف مشروم</h3><div class="price-row"><div class="price-tag"><span>S</span>180</div><div class="price-tag"><span>D</span>220</div></div></div>
-        <div class="item-card"><img src="jalapeno-burger.jpg"><h3>ياس سبايسي هالابينو</h3><div class="price-row"><div class="price-tag"><span>S</span>180</div><div class="price-tag"><span>D</span>220</div></div></div>
-        <div class="item-card"><img src="beef-classic.jpg"><h3>بيف كلاسيك</h3><div class="price-row"><div class="price-tag"><span>S</span>160</div><div class="price-tag"><span>D</span>200</div></div></div>
+        <div class="item-card">
+            <img src="yas-classic-beef.jpg">
+            <h3>ياس كلاسيك بيف</h3>
+            <div class="price-row"><div class="price-tag"><span>Single</span>160</div><div class="price-tag"><span>Double</span>200</div></div>
+        </div>
+        <div class="item-card">
+            <img src="beef-classic.jpg">
+            <h3>بيف كلاسيك</h3>
+            <div class="price-row"><div class="price-tag"><span>Single</span>160</div><div class="price-tag"><span>Double</span>200</div></div>
+        </div>
+        <div class="item-card"><img src="beef-mushroom.jpg"><h3>ياس بيف مشروم</h3><div class="price-row"><div class="price-tag"><span>Single</span>180</div><div class="price-tag"><span>Double</span>220</div></div></div>
+        <div class="item-card"><img src="jalapeno-burger.jpg"><h3>ياس هالابينو</h3><div class="price-row"><div class="price-tag"><span>Single</span>180</div><div class="price-tag"><span>Double</span>220</div></div></div>
     </div>
 
     <h2 class="section-title">قائمة الدجاج (CHICKEN)</h2>
     <div class="menu-grid">
-        <div class="item-card"><img src="chicken-classic.jpg"><h3>ياس كلاسيك تشيكن</h3><div class="price-row"><div class="price-tag"><span>S</span>150</div><div class="price-tag"><span>D</span>200</div></div></div>
-        <div class="item-card"><img src="chicken-ranch.jpg"><h3>ياس تشيكن رانش</h3><div class="price-row"><div class="price-tag"><span>S</span>170</div><div class="price-tag"><span>D</span>220</div></div></div>
-        <div class="item-card"><img src="chicken-mushroom.jpg"><h3>ياس كريمي مشروم</h3><div class="price-row"><div class="price-tag"><span>S</span>180</div><div class="price-tag"><span>D</span>230</div></div></div>
-        <div class="item-card"><img src="homemade-chicken.jpg"><h3>هوم ميد بانية</h3><div class="price-row"><div class="price-tag"><span>S</span>160</div><div class="price-tag"><span>D</span>210</div></div></div>
+        <div class="item-card"><img src="chicken-classic.jpg"><h3>ياس كلاسيك تشيكن</h3><div class="price-row"><div class="price-tag"><span>Single</span>150</div><div class="price-tag"><span>Double</span>200</div></div></div>
+        <div class="item-card"><img src="chicken-ranch.jpg"><h3>ياس تشيكن رانش</h3><div class="price-row"><div class="price-tag"><span>Single</span>170</div><div class="price-tag"><span>Double</span>220</div></div></div>
+        <div class="item-card"><img src="chicken-mushroom.jpg"><h3>تشيكن مشروم</h3><div class="price-row"><div class="price-tag"><span>Single</span>180</div><div class="price-tag"><span>Double</span>230</div></div></div>
+        <div class="item-card"><img src="homemade-chicken.jpg"><h3>هوم ميد بانية</h3><div class="price-row"><div class="price-tag"><span>Single</span>160</div><div class="price-tag"><span>Double</span>210</div></div></div>
     </div>
 
     <h2 class="section-title">المقبلات (SIDES)</h2>
     <div class="menu-grid">
-        <div class="item-card"><img src="loaded-fries-strips.jpg"><h3>فرايز استريبس وجبنة</h3><div class="price-row"><div class="price-tag">90 LE</div></div></div>
-        <div class="item-card"><img src="classic-fries.jpg"><h3>باكت بطاطس كلاسيك</h3><div class="price-row"><div class="price-tag">40 LE</div></div></div>
+        <div class="item-card"><img src="loaded-fries-strips.jpg"><h3>فرايز استريبس</h3><div class="price-row"><div class="price-tag">90 LE</div></div></div>
+        <div class="item-card"><img src="classic-fries.jpg"><h3>بطاطس كلاسيك</h3><div class="price-row"><div class="price-tag">40 LE</div></div></div>
         <div class="item-card"><img src="chicken-strips.jpg"><h3>تشيكن استريبس</h3><div class="price-row"><div class="price-tag">120 LE</div></div></div>
         <div class="item-card"><img src="Cheddar-Bites.jpg"><h3>شيدر بايتس</h3><div class="price-row"><div class="price-tag">70 LE</div></div></div>
     </div>
@@ -72,7 +82,7 @@
         <div class="sauce-item"><img src="texas-sauce.jpg"><p>تكساس</p></div>
         <div class="sauce-item"><img src="ranch-sauce.jpg"><p>رانش</p></div>
         <div class="sauce-item"><img src="cheese-sauce.jpg"><p>جبنة</p></div>
-        <div class="sauce-item"><img src="bhq-sauce.jpg"><p>باربيكيو</p></div>
+        <div class="sauce-item"><img src="bbq-sauce.jpg"><p>باربيكيو</p></div>
     </div>
 </div>
 
