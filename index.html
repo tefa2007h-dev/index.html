@@ -25,7 +25,6 @@ body {
     color: #fff;
 }
 
-/* GRID BACKGROUND */
 body::after {
     content: "";
     position: fixed;
@@ -39,7 +38,7 @@ body::after {
     z-index: -1;
 }
 
-/* COVER (راندا) */
+/* COVER */
 .hero {
     text-align: center;
     padding: 15px;
@@ -82,14 +81,12 @@ body::after {
     margin: 10px 0;
 }
 
-/* CONTAINER */
 .container {
     max-width: 600px;
     margin: auto;
     padding: 10px;
 }
 
-/* SECTION */
 .section-title {
     margin: 25px 0 15px;
     text-align: center;
@@ -101,14 +98,12 @@ body::after {
     border-radius: 10px;
 }
 
-/* GRID */
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
 }
 
-/* CARD */
 .card {
     background: #111;
     border-radius: 12px;
@@ -116,7 +111,6 @@ body::after {
     border: 1px solid #333;
 }
 
-/* IMAGES FULL */
 .card img {
     width: 100%;
     height: 150px;
@@ -124,14 +118,12 @@ body::after {
     background: #000;
 }
 
-/* TEXT */
 .card h3 {
     font-size: 0.9rem;
     padding: 8px;
     text-align: center;
 }
 
-/* PRICE */
 .price {
     display: flex;
     justify-content: space-around;
@@ -145,7 +137,6 @@ body::after {
     font-weight: bold;
 }
 
-/* SAUCES */
 .sauces {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -168,7 +159,6 @@ body::after {
     font-size: 0.75rem;
 }
 
-/* MOBILE */
 @media(max-width:600px){
     .grid {
         grid-template-columns: 1fr;
@@ -179,17 +169,14 @@ body::after {
 
 <body>
 
-<!-- COVER -->
 <div class="hero">
     <img src="cover.jpg">
 </div>
 
-<!-- LOGO -->
 <div class="logo">
     <div class="logo-text">YAS</div>
 </div>
 
-<!-- TITLE -->
 <div class="title">YAS Burger</div>
 
 <div class="container">
@@ -200,6 +187,7 @@ body::after {
     <div class="card"><img src="beef-classic.jpg"><h3>بيف كلاسيك</h3><div class="price"><div>S 160</div><div>D 200</div></div></div>
     <div class="card"><img src="beef-mushroom.jpg"><h3>ياس بيف مشروم</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
     <div class="card"><img src="jalapeno-burger.jpg"><h3>ياس سبايسي هالابينو</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
+    <div class="card"><img src="big-mac.jpg"><h3>بيف دبل سبشيال</h3><div class="price"><div>S 200</div><div>D 260</div></div></div>
 </div>
 
 <!-- CHICKEN -->
@@ -215,8 +203,11 @@ body::after {
 <h2 class="section-title">🍟 SIDES</h2>
 <div class="grid">
     <div class="card"><img src="loaded-fries-cheese.jpg"><h3>فرايز استريبس وجبنة</h3><div class="price"><div>90 LE</div></div></div>
+    <div class="card"><img src="loaded-fries-meat.jpg"><h3>فرايز لحمة</h3><div class="price"><div>110 LE</div></div></div>
+    <div class="card"><img src="loaded-fries-strips.jpg"><h3>فرايز تشيكن استريبس</h3><div class="price"><div>110 LE</div></div></div>
     <div class="card"><img src="classic-fries.jpg"><h3>بطاطس كلاسيك</h3><div class="price"><div>40 LE</div></div></div>
     <div class="card"><img src="chicken-strips.jpg"><h3>تشيكن استريبس</h3><div class="price"><div>120 LE</div></div></div>
+    <div class="card"><img src="mozzarella-sticks.jpg"><h3>موزاريلا ستيكس</h3><div class="price"><div>90 LE</div></div></div>
     <div class="card"><img src="Cheddar-Bites.jpg"><h3>شيدر بايتس</h3><div class="price"><div>70 LE</div></div></div>
 </div>
 
