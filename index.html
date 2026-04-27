@@ -25,6 +25,7 @@ body {
     color: #fff;
 }
 
+/* GRID */
 body::after {
     content: "";
     position: fixed;
@@ -81,12 +82,14 @@ body::after {
     margin: 10px 0;
 }
 
+/* CONTAINER */
 .container {
     max-width: 600px;
     margin: auto;
     padding: 10px;
 }
 
+/* SECTION */
 .section-title {
     margin: 25px 0 15px;
     text-align: center;
@@ -98,19 +101,28 @@ body::after {
     border-radius: 10px;
 }
 
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
 }
 
+/* CARD */
 .card {
     background: #111;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid #333;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
+.card:active {
+    transform: scale(0.97);
+}
+
+/* IMAGES */
 .card img {
     width: 100%;
     height: 150px;
@@ -124,6 +136,7 @@ body::after {
     text-align: center;
 }
 
+/* PRICE */
 .price {
     display: flex;
     justify-content: space-around;
@@ -137,6 +150,7 @@ body::after {
     font-weight: bold;
 }
 
+/* SAUCES */
 .sauces {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -146,6 +160,7 @@ body::after {
 
 .sauce {
     text-align: center;
+    cursor: pointer;
 }
 
 .sauce img {
@@ -159,6 +174,35 @@ body::after {
     font-size: 0.75rem;
 }
 
+/* POPUP */
+#popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup-content {
+    text-align: center;
+    max-width: 90%;
+}
+
+.popup-content img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.popup-content h3 {
+    margin-top: 10px;
+    color: var(--yellow);
+}
+
+/* MOBILE */
 @media(max-width:600px){
     .grid {
         grid-template-columns: 1fr;
@@ -169,14 +213,17 @@ body::after {
 
 <body>
 
+<!-- COVER -->
 <div class="hero">
     <img src="cover.jpg">
 </div>
 
+<!-- LOGO -->
 <div class="logo">
     <div class="logo-text">YAS</div>
 </div>
 
+<!-- TITLE -->
 <div class="title">YAS Burger</div>
 
 <div class="container">
@@ -184,45 +231,68 @@ body::after {
 <!-- BEEF -->
 <h2 class="section-title">🍔 BEEF</h2>
 <div class="grid">
-    <div class="card"><img src="beef-classic.jpg"><h3>بيف كلاسيك</h3><div class="price"><div>S 160</div><div>D 200</div></div></div>
-    <div class="card"><img src="beef-mushroom.jpg"><h3>ياس بيف مشروم</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
-    <div class="card"><img src="jalapeno-burger.jpg"><h3>ياس سبايسي هالابينو</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
-    <div class="card"><img src="big-mac.jpg"><h3>بيف دبل سبشيال</h3><div class="price"><div>S 200</div><div>D 260</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="beef-classic.jpg"><h3>بيف كلاسيك</h3><div class="price"><div>S 160</div><div>D 200</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="beef-mushroom.jpg"><h3>ياس بيف مشروم</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="jalapeno-burger.jpg"><h3>ياس سبايسي هالابينو</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="big-mac.jpg"><h3>بيف دبل سبشيال</h3><div class="price"><div>S 200</div><div>D 260</div></div></div>
 </div>
 
 <!-- CHICKEN -->
 <h2 class="section-title">🍗 CHICKEN</h2>
 <div class="grid">
-    <div class="card"><img src="chicken-classic.jpg"><h3>ياس كلاسيك تشيكن</h3><div class="price"><div>S 150</div><div>D 200</div></div></div>
-    <div class="card"><img src="chicken-ranch.jpg"><h3>ياس تشيكن رانش</h3><div class="price"><div>S 170</div><div>D 220</div></div></div>
-    <div class="card"><img src="chicken-mushroom.jpg"><h3>ياس كريمي مشروم</h3><div class="price"><div>S 180</div><div>D 230</div></div></div>
-    <div class="card"><img src="homemade-chicken.jpg"><h3>هوم ميد بانية</h3><div class="price"><div>S 160</div><div>D 210</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="chicken-classic.jpg"><h3>ياس كلاسيك تشيكن</h3><div class="price"><div>S 150</div><div>D 200</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="chicken-ranch.jpg"><h3>ياس تشيكن رانش</h3><div class="price"><div>S 170</div><div>D 220</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="chicken-mushroom.jpg"><h3>ياس كريمي مشروم</h3><div class="price"><div>S 180</div><div>D 230</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="homemade-chicken.jpg"><h3>هوم ميد بانية</h3><div class="price"><div>S 160</div><div>D 210</div></div></div>
 </div>
 
 <!-- SIDES -->
 <h2 class="section-title">🍟 SIDES</h2>
 <div class="grid">
-    <div class="card"><img src="loaded-fries-cheese.jpg"><h3>فرايز استريبس وجبنة</h3><div class="price"><div>90 LE</div></div></div>
-    <div class="card"><img src="loaded-fries-meat.jpg"><h3>فرايز لحمة</h3><div class="price"><div>110 LE</div></div></div>
-    <div class="card"><img src="loaded-fries-strips.jpg"><h3>فرايز تشيكن استريبس</h3><div class="price"><div>110 LE</div></div></div>
-    <div class="card"><img src="classic-fries.jpg"><h3>بطاطس كلاسيك</h3><div class="price"><div>40 LE</div></div></div>
-    <div class="card"><img src="chicken-strips.jpg"><h3>تشيكن استريبس</h3><div class="price"><div>120 LE</div></div></div>
-    <div class="card"><img src="mozzarella-sticks.jpg"><h3>موزاريلا ستيكس</h3><div class="price"><div>90 LE</div></div></div>
-    <div class="card"><img src="Cheddar-Bites.jpg"><h3>شيدر بايتس</h3><div class="price"><div>70 LE</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="loaded-fries-cheese.jpg"><h3>فرايز استريبس وجبنة</h3><div class="price"><div>90 LE</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="loaded-fries-meat.jpg"><h3>فرايز لحمة</h3><div class="price"><div>110 LE</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="loaded-fries-strips.jpg"><h3>فرايز استريبس</h3><div class="price"><div>110 LE</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="classic-fries.jpg"><h3>بطاطس كلاسيك</h3><div class="price"><div>40 LE</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="chicken-strips.jpg"><h3>تشيكن استريبس</h3><div class="price"><div>120 LE</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="mozzarella-sticks.jpg"><h3>موزاريلا ستيكس</h3><div class="price"><div>90 LE</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="Cheddar-Bites.jpg"><h3>شيدر بايتس</h3><div class="price"><div>70 LE</div></div></div>
 </div>
 
 <!-- SAUCES -->
 <h2 class="section-title">🥫 SAUCES</h2>
 <div class="sauces">
-    <div class="sauce"><img src="ketchup.jpg"><p>كاتشب</p></div>
-    <div class="sauce"><img src="mayonnaise.jpg"><p>مايونيز</p></div>
-    <div class="sauce"><img src="texas-sauce.jpg"><p>تكساس</p></div>
-    <div class="sauce"><img src="ranch-sauce.jpg"><p>رانش</p></div>
-    <div class="sauce"><img src="cheese-sauce.jpg"><p>جبنة</p></div>
-    <div class="sauce"><img src="BBQ-sauce.jpg"><p>باربيكيو</p></div>
+    <div class="sauce" onclick="openPopup(this)"><img src="ketchup.jpg"><p>كاتشب</p></div>
+    <div class="sauce" onclick="openPopup(this)"><img src="mayonnaise.jpg"><p>مايونيز</p></div>
+    <div class="sauce" onclick="openPopup(this)"><img src="texas-sauce.jpg"><p>تكساس</p></div>
+    <div class="sauce" onclick="openPopup(this)"><img src="ranch-sauce.jpg"><p>رانش</p></div>
+    <div class="sauce" onclick="openPopup(this)"><img src="cheese-sauce.jpg"><p>جبنة</p></div>
+    <div class="sauce" onclick="openPopup(this)"><img src="BBQ-sauce.jpg"><p>باربيكيو</p></div>
 </div>
 
 </div>
+
+<!-- POPUP -->
+<div id="popup" onclick="closePopup()">
+    <div class="popup-content" onclick="event.stopPropagation()">
+        <img id="popup-img">
+        <h3 id="popup-title"></h3>
+    </div>
+</div>
+
+<script>
+function openPopup(card){
+    let img = card.querySelector("img").src;
+    let title = card.querySelector("h3") ? card.querySelector("h3").innerText : card.querySelector("p").innerText;
+
+    document.getElementById("popup-img").src = img;
+    document.getElementById("popup-title").innerText = title;
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
