@@ -52,25 +52,16 @@ body::after {
     border-radius: 15px;
 }
 
-/* LOGO */
+/* LOGO IMAGE */
 .logo {
     text-align: center;
     margin-top: 10px;
 }
 
-.logo-text {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 3px solid var(--red);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 1.6rem;
-    color: var(--yellow);
-    background: #000;
-    margin: auto;
+.logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 /* TITLE */
@@ -200,17 +191,27 @@ body::after {
 
 <body>
 
+<!-- COVER -->
 <div class="hero">
     <img src="cover.jpg">
 </div>
 
+<!-- LOGO -->
 <div class="logo">
-    <div class="logo-text">YAS</div>
+    <img src="logo.png">
 </div>
 
 <div class="title">YAS Burger</div>
 
 <div class="container">
+
+<!-- BEEF -->
+<h2 class="section-title">🍔 BEEF</h2>
+<div class="grid">
+    <div class="card" onclick="openPopup(this)"><img src="beef-classic.jpg"><h3>بيف كلاسيك</h3><div class="price"><div>S 160</div><div>D 200</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="beef-mushroom.jpg"><h3>ياس بيف مشروم</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
+    <div class="card" onclick="openPopup(this)"><img src="jalapeno-burger.jpg"><h3>ياس سبايسي هالابينو</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
+</div>
 
 <!-- CHICKEN -->
 <h2 class="section-title">🍗 CHICKEN</h2>
