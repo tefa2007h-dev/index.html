@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YAS Burger Menu</title>
+<title>YAS Burger</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --red: #E31E24;
+    --yellow: #FFD200;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -17,14 +21,8 @@
 }
 
 body {
+    background: #000;
     color: #fff;
-    background: linear-gradient(
-        to bottom,
-        #000 0%,
-        #000 45%,
-        #111 45%,
-        #111 100%
-    );
 }
 
 /* Grid background */
@@ -32,105 +30,150 @@ body::after {
     content: "";
     position: fixed;
     bottom: 0;
-    left: 0;
     width: 100%;
     height: 55%;
     background-image:
-        linear-gradient(#E31E24 1px, transparent 1px),
-        linear-gradient(90deg, #E31E24 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.2;
+        linear-gradient(rgba(227,30,36,0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(227,30,36,0.2) 1px, transparent 1px);
+    background-size: 30px 30px;
     z-index: -1;
 }
 
-/* Logo */
+/* HERO */
+.hero {
+    height: 260px;
+    background: url("cover.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), #000);
+}
+
+/* LOGO */
 .logo {
-    text-align: center;
-    padding: 30px 0;
+    position: absolute;
+    top: 15px;
+    z-index: 2;
 }
 
 .logo img {
-    width: 150px;
+    width: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--red);
+    background: #000;
+    padding: 5px;
 }
 
-/* Sections */
-.section {
-    padding: 20px;
+/* TITLE */
+.title {
+    position: relative;
+    z-index: 2;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--yellow);
 }
 
-.section h2 {
-    color: #FFD200;
-    margin-bottom: 15px;
-    border-right: 5px solid #E31E24;
-    padding-right: 10px;
+/* CONTAINER */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 15px;
 }
 
-/* Cards */
+/* SECTION */
+.section-title {
+    margin: 25px 0 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--yellow), var(--red));
+    color: #000;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 12px;
 }
 
+/* CARD */
 .card {
     background: #111;
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    transition: 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* IMAGE (مصغرة) */
 .card img {
     width: 100%;
-    height: 140px;
+    height: 135px;
     object-fit: cover;
 }
 
+/* TEXT */
 .card h3 {
-    font-size: 14px;
-    margin: 10px 0;
+    font-size: 0.9rem;
+    padding: 8px;
+    text-align: center;
 }
 
+/* PRICE */
 .price {
-    font-size: 13px;
-    color: #FFD200;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    background: #111;
+    border-top: 1px solid var(--red);
 }
 
-/* Sauces */
+.price div {
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+/* SAUCES */
 .sauces {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     gap: 10px;
-    justify-content: center;
+    margin-bottom: 30px;
 }
 
 .sauce {
-    width: 70px;
     text-align: center;
 }
 
 .sauce img {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #E31E24;
+    border: 2px solid var(--yellow);
 }
 
 .sauce p {
-    font-size: 12px;
-    margin-top: 5px;
+    font-size: 0.75rem;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* MOBILE */
+@media(max-width:600px){
     .grid {
         grid-template-columns: 1fr;
-    }
-
-    .card img {
-        height: 180px;
     }
 }
 </style>
@@ -138,127 +181,53 @@ body::after {
 
 <body>
 
-<!-- Logo -->
-<div class="logo">
-    <img src="image_3b4619.png" alt="YAS Burger Logo">
+<!-- HERO -->
+<div class="hero">
+    <div class="logo">
+        <img src="logo.png">
+    </div>
+    <div class="title">YAS Burger</div>
 </div>
 
+<div class="container">
+
 <!-- BEEF -->
-<div class="section">
-    <h2>🍔 BEEF</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="image_397c5c.jpg">
-            <h3>بيف كلاسيك</h3>
-            <div class="price">Single / Double</div>
-        </div>
-
-        <div class="card">
-            <img src="image_3c1f77.jpg">
-            <h3>ياس بيف مشروم</h3>
-            <div class="price">Single / Double</div>
-        </div>
-
-        <div class="card">
-            <img src="image_3a5ca1.jpg">
-            <h3>ياس سبايسي هالابينو</h3>
-            <div class="price">Single / Double</div>
-        </div>
-    </div>
+<h2 class="section-title">🍔 قائمة اللحوم (BEEF)</h2>
+<div class="grid">
+    <div class="card"><img src="beef-classic.jpg"><h3>بيف كلاسيك</h3><div class="price"><div>S 160</div><div>D 200</div></div></div>
+    <div class="card"><img src="beef-mushroom.jpg"><h3>ياس بيف مشروم</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
+    <div class="card"><img src="jalapeno-burger.jpg"><h3>ياس سبايسي هالابينو</h3><div class="price"><div>S 180</div><div>D 220</div></div></div>
 </div>
 
 <!-- CHICKEN -->
-<div class="section">
-    <h2>🍗 CHICKEN</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="image_3b3715.jpg">
-            <h3>ياس كلاسيك تشيكن</h3>
-            <div class="price">Single / Double</div>
-        </div>
-
-        <div class="card">
-            <img src="chicken-ranch.jpg">
-            <h3>ياس تشيكن رانش</h3>
-            <div class="price">Single / Double</div>
-        </div>
-
-        <div class="card">
-            <img src="chicken-mushroom.jpg">
-            <h3>ياس كريمي مشروم</h3>
-            <div class="price">Single / Double</div>
-        </div>
-
-        <div class="card">
-            <img src="homemade-chicken.jpg">
-            <h3>هوم ميد بانية</h3>
-            <div class="price">Single / Double</div>
-        </div>
-    </div>
+<h2 class="section-title">🍗 قائمة الدجاج (CHICKEN)</h2>
+<div class="grid">
+    <div class="card"><img src="chicken-classic.jpg"><h3>ياس كلاسيك تشيكن</h3><div class="price"><div>S 150</div><div>D 200</div></div></div>
+    <div class="card"><img src="chicken-ranch.jpg"><h3>ياس تشيكن رانش</h3><div class="price"><div>S 170</div><div>D 220</div></div></div>
+    <div class="card"><img src="chicken-mushroom.jpg"><h3>ياس كريمي مشروم</h3><div class="price"><div>S 180</div><div>D 230</div></div></div>
+    <div class="card"><img src="homemade-chicken.jpg"><h3>هوم ميد بانية</h3><div class="price"><div>S 160</div><div>D 210</div></div></div>
 </div>
 
 <!-- SIDES -->
-<div class="section">
-    <h2>🍟 SIDES</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="image_397bfc.jpg">
-            <h3>فرايز استريبس وجبنة</h3>
-        </div>
-
-        <div class="card">
-            <img src="image_397c1a.jpg">
-            <h3>باكت بطاطس كلاسيك</h3>
-        </div>
-
-        <div class="card">
-            <img src="image_397c3d.jpg">
-            <h3>تشيكن استريبس</h3>
-        </div>
-
-        <div class="card">
-            <img src="Cheddar-Bites.jpg">
-            <h3>شيدر بايتس</h3>
-        </div>
-    </div>
+<h2 class="section-title">🍟 المقبلات (SIDES)</h2>
+<div class="grid">
+    <div class="card"><img src="loaded-fries-cheese.jpg"><h3>فرايز استريبس وجبنة</h3><div class="price"><div>90 LE</div></div></div>
+    <div class="card"><img src="classic-fries.jpg"><h3>بطاطس كلاسيك</h3><div class="price"><div>40 LE</div></div></div>
+    <div class="card"><img src="chicken-strips.jpg"><h3>تشيكن استريبس</h3><div class="price"><div>120 LE</div></div></div>
+    <div class="card"><img src="Cheddar-Bites.jpg"><h3>شيدر بايتس</h3><div class="price"><div>70 LE</div></div></div>
 </div>
 
 <!-- SAUCES -->
-<div class="section">
-    <h2>🥫 SAUCES</h2>
-    <div class="sauces">
+<h2 class="section-title">🥫 الصوصات (SAUCES)</h2>
+<div class="sauces">
+    <div class="sauce"><img src="ketchup.jpg"><p>كاتشب</p></div>
+    <div class="sauce"><img src="mayonnaise.jpg"><p>مايونيز</p></div>
+    <div class="sauce"><img src="texas-sauce.jpg"><p>تكساس</p></div>
+    <div class="sauce"><img src="ranch-sauce.jpg"><p>رانش</p></div>
+    <div class="sauce"><img src="cheese-sauce.jpg"><p>جبنة</p></div>
+    <div class="sauce"><img src="BBQ-sauce.jpg"><p>باربيكيو</p></div>
+</div>
 
-        <div class="sauce">
-            <img src="ketchup.jpg">
-            <p>كاتشب</p>
-        </div>
-
-        <div class="sauce">
-            <img src="mayonnaise.jpg">
-            <p>مايونيز</p>
-        </div>
-
-        <div class="sauce">
-            <img src="texas-sauce.jpg">
-            <p>تكساس</p>
-        </div>
-
-        <div class="sauce">
-            <img src="ranch-sauce.jpg">
-            <p>رانش</p>
-        </div>
-
-        <div class="sauce">
-            <img src="cheese-sauce.jpg">
-            <p>جبنة</p>
-        </div>
-
-        <div class="sauce">
-            <img src="image_39efa7.jpg">
-            <p>باربيكيو</p>
-        </div>
-
-    </div>
 </div>
 
 </body>
